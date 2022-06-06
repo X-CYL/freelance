@@ -4,7 +4,7 @@ function calculGain(){
     let formObj = new FormData(myForm);//transforme le formulaire en un objet avec tout les datas
     // le formData permet de créer un objet (ici formObj) avec toute les methodes et instances du formulaire
     //ne restera plus qu'a aller chercher avec la methode (get) le name par ex
-    
+    //sert a acceder aux données du formulaire apres mise en forme de type dictionnaire
     //recupere les entrées de valeur
     let tauxHoraire = formObj.get('tauxHoraire');
     let TauxJournalierMoyen = formObj.get('TJM');
@@ -20,7 +20,25 @@ function calculGain(){
     let gainTauxJournalierMoyen = TauxJournalierMoyen * qteTauxJournalierMoyen;
     let gainExtras = extras * qteExtras;
 
-    let total =gainHeures + gainTauxJournalierMoyen + gainExtras;
+    let totalBrut =gainHeures + gainTauxJournalierMoyen + gainExtras;
 
-    document.getElementById('resultatBrut').innerText = total + "€";
+    document.getElementById('resultatBrut').innerText = totalBrut + " €";
+    // enlever les charges
+//totalBrut - charges%
+// chargeADeduire = totalBrut -(totalBrut * (charges/100))
+let chargesADeduire = (totalBrut * (charges/100));
+let totalNet = totalBrut - chargesADeduire;
+document.getElementById('resultatTaxes').innerText = chargesADeduire + " €";
+document.getElementById('resultatNet').innerText = totalNet + " €";
 }
+
+/* reste a faire
+arrondir le résultat à deux décimales
+raffraichir le resultat au changement d'input
+onchane et on keyup
+verifier si < a 0 
+animation?
+bouton et fonction imprimer
+convertir en PDF
+stocker en cookie le formulaire (dernier calcul)
+historique de calcul seulement si click sur calculer*/
