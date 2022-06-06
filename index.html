@@ -5,28 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styleGains.css" rel="stylesheet"/>
-    <script src="scriptGains.js" defer></script>
     <title>Gains en freelance</title>
 </head>
 <body>
     <header>
         <h1>Freelance money calculator</h1>
     </header>
-    <form class="formCalcul">
+    <form class="formCalcul" id="formCalculGain">
         <div class="sectionCalcul pricing">
             <fieldset class="formContainer">
                 <legend>Placez vos tarifs</legend>
                 <div class="formField">
                    <label>TH</label>
-                   <input class="inpt" name="inp tauxHoraire" type="number" placeholder="ex: 120"/>
+                   <input class="inpt" name="tauxHoraire" type="number" placeholder="ex: 120"/>
                 </div>
                 <div class="formField">
                     <label>TJM</label>
-                    <input class="inpt" name="inp TJM" type="number" placeholder="ex: 340"/>
+                    <input class="inpt" name="TJM" type="number" placeholder="ex: 340"/>
                 </div>
                 <div class="formField">
                     <label>Extras</label>
-                   <input class="inpt" name="inp extras" type="number" placeholder="ex: 45"/>
+                   <input class="inpt" name="extras" type="number" placeholder="ex: 45"/>
                 </div>
             </fieldset>
         </div>
@@ -35,15 +34,15 @@
                 <legend>Mettez vos quantitées</legend>
                 <div>
                     <label>TH</label>
-                    <input class="inpt" name="inp qteTH" type="number" placeholder="ex: 120"/>
+                    <input class="inpt" name="qteTH" type="number" placeholder="ex: 120"/>
                  </div>
                  <div>
                     <label>TJM</label>
-                    <input class="inpt" name="inp qteTJM" type="number" placeholder="ex: 76"/>
+                    <input class="inpt" name="qteTJM" type="number" placeholder="ex: 76"/>
                  </div>
                  <div>
                     <label>Extras</label>
-                    <input class="inpt" name="inp qteExtras" type="number" placeholder="ex: 16"/>
+                    <input class="inpt" name="qteExtras" type="number" placeholder="ex: 16"/>
                  </div>
             </fieldset>
         </div>
@@ -52,29 +51,32 @@
                 <legend>Indiquez vos charges</legend>
                 <div>
                     <label>Charges</label>
-                    <input class="inpt" name="inp Charges" type="number" placeholder="ex: 11"/>
+                    <input class="inpt" name="Charges" type="number" placeholder="ex: 11"/>
                  </div>
             </fieldset>
         </div>
         <div class="sectionCalcul validation">
-            <button class="buttonCalc">calculer</button>
+            <button class="buttonCalc" id="calcFunction" onclick="calculGain()">calculer</button>
         </div>
         <div class="sectionCalcul result">
             <fieldset class="formContainer">
                 <legend>le resultat net</legend>
-                <div class="resultat resultatBrut">
-                    BRUT
+            <div class="resultDiv resultBrut">
+                <p>Brut</p>
+                <span id="resultatBrut">€</span> </span>
+            </div>
+                <div class="resultDiv resultTaxes">
+                    <p>Taxes</p>
+                    <span id="resultatTaxes">€</span>
                 </div>
-                <div class="resultat resultatTaxes">
-                    Taxes
-                </div>
-                <div class="resultat resultatNet">
-                    Net
+                <div class="resultDiv resultNet">
+                    <p>Net</p>
+                    <span id="resultatNet">€</span>
                 </div>
             </fieldset>
         </div>
         <p>cours N° 2</p>
     </form>
-    
+    <script src="scriptGains.js"></script>
 </body>
 </html>

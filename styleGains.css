@@ -1,6 +1,6 @@
 .formCalcul .sectionCalcul{
     margin: 15px;
-    background-color: lightblue;
+    background-color: rgb(134, 199, 221);
 }
 .formContainer{
     display: flex;
@@ -18,23 +18,30 @@ fieldset{
     color:rgb(59, 108, 110)
 }
 body{
-    background: rgb(107, 188, 239);
+    background: rgb(172, 239, 236);
 }
 .inpt{
     background: lightgray;
 }
-.resultat{
-    height:60px;
-    width: 50px;
-}
-.resultatBrut{
-    background: lightcoral;
-}.resultatTaxes{
-    background: rgb(170, 166, 166);
-}
-.resultatNet{
-    background: lightgreen;
-}
 h1{
     color:blue;
+}
+.resultDiv{
+    height: 80px;
+    width: 60px;
+}
+.resultBrut{
+    background: rgb(245, 83, 83);
+    text-align: center;
+    color: aliceblue;
+}
+.resultTaxes{
+    background: grey;
+    text-align: center;
+    color: aliceblue;
+}
+.resultNet{
+    background: green;
+    text-align: center;
+    color: aliceblue;
 }
