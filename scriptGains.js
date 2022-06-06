@@ -28,12 +28,12 @@ function calculGain(){
 // chargeADeduire = totalBrut -(totalBrut * (charges/100))
 let chargesADeduire = (totalBrut * (charges/100));
 let totalNet = totalBrut - chargesADeduire;
-document.getElementById('resultatTaxes').innerText = chargesADeduire + " €";
-document.getElementById('resultatNet').innerText = totalNet + " €";
+document.getElementById('resultatTaxes').innerText = chargesADeduire.toFixed(2) + " €";
+document.getElementById('resultatNet').innerText = totalNet.toFixed(2) + " €";
 }
 
 /* reste a faire
-arrondir le résultat à deux décimales
+arrondir le résultat à deux décimales   FAIT 
 raffraichir le resultat au changement d'input
 onchane et on keyup
 verifier si < a 0 
