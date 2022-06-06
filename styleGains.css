@@ -1,5 +1,6 @@
 .formCalcul .sectionCalcul{
     margin: 15px;
+    background-color: lightblue;
 }
 .formContainer{
     display: flex;
@@ -7,7 +8,33 @@
     justify-content: space-around;
 }
 .buttonCalc{
+    background: gray;
+    color:aquamarine;
     width:40%;
     height: 30px;
     margin-left: 35%;
+}
+fieldset{
+    color:rgb(59, 108, 110)
+}
+body{
+    background: rgb(107, 188, 239);
+}
+.inpt{
+    background: lightgray;
+}
+.resultat{
+    height:60px;
+    width: 50px;
+}
+.resultatBrut{
+    background: lightcoral;
+}.resultatTaxes{
+    background: rgb(170, 166, 166);
+}
+.resultatNet{
+    background: lightgreen;
+}
+h1{
+    color:blue;
 }
