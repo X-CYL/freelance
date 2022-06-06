@@ -1,0 +1,13 @@
+.formCalcul .sectionCalcul{
+    margin: 15px;
+}
+.formContainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.buttonCalc{
+    width:40%;
+    height: 30px;
+    margin-left: 35%;
+}
