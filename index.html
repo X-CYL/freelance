@@ -16,11 +16,11 @@
             <fieldset class="formContainer">
                 <legend>Placez vos tarifs en €</legend>
                 <div class="formField">
-                   <label>TH</label>
+                   <label>TxHor</label>
                    <input class="inpt" name="tauxHoraire" type="number" placeholder="ex: 120"/>
                 </div>
                 <div class="formField">
-                    <label>TJM</label>
+                    <label>TxJM</label>
                     <input class="inpt" name="TJM" type="number" placeholder="ex: 340"/>
                 </div>
                 <div class="formField">
@@ -32,15 +32,15 @@
         <div class="sectionCalcul qte">
             <fieldset class="formContainer">
                 <legend>Mettez vos quantitées</legend>
-                <div>
-                    <label>TH</label>
+                <div class="formFieldQTE">
+                    <label>Qté Heure</label>
                     <input class="inpt" name="qteTH" type="number" placeholder="ex: 120"/>
                  </div>
-                 <div>
-                    <label>TJM</label>
+                 <div class="formFieldQTE">
+                    <label> Qté TJM</label>
                     <input class="inpt" name="qteTJM" type="number" placeholder="ex: 76"/>
                  </div>
-                 <div>
+                 <div class="formFieldQTE">
                     <label>Extras</label>
                     <input class="inpt" name="qteExtras" type="number" placeholder="ex: 16"/>
                  </div>
@@ -56,7 +56,7 @@
             </fieldset>
         </div>
         <div class="sectionCalcul validation">
-            <button class="buttonCalc" type="button" id="calcFunction" onclick="calculGain()">calculer</button>
+            <button class="buttonCalc" type="button" id="calcFunction">calculer</button>
             <button class="buttonCalc" type="reset">vider les Champs</button>
         </div>
         <div class="sectionCalcul result">
