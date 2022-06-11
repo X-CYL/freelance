@@ -32,6 +32,19 @@ document.getElementById('resultatTaxes').innerText = chargesADeduire.toFixed(2) 
 document.getElementById('resultatNet').innerText = totalNet.toFixed(2) + " €";
 }
 
+//recuperer tous les inputs et leur affecter des evenements
+let inputs = document.querySelectorAll('#formCalculGain input.inpt');
+inputs.forEach(monInput => {
+    //si il a une valeur, lui donner.
+    monInput.addEventListener('change', calculGain);
+    monInput.addEventListener('keyup', calculGain);
+})
+
+//pour stocker dans les cookies
+//cookie est stocke dans le navigateur en local
+function saveElementsInCookies(input){
+    document.cookie = input.name +'='+ input.value;
+}
 /* reste a faire
 arrondir le résultat à deux décimales   FAIT 
 raffraichir le resultat au changement d'input
