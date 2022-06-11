@@ -36,12 +36,19 @@ function calculGain(){
     let qteExtras = formObj.get('qteExtras');
     //recupere les charges
     let charges = formObj.get('Charges');
+
+    //bloquer TauxHoraire si TJM utilisé et vice-versa
+    //tauxHoraire.addEventListener('keyDown',desactiveTJM());
+    //TauxJournalierMoyen.addEventListener('keyDown',desactiveTauxHoraire());
+
+
     // on commence le calcul
     let gainHeures= tauxHoraire * qteTauxHoraire;
     let gainTauxJournalierMoyen = TauxJournalierMoyen * qteTauxJournalierMoyen;
     let gainExtras = extras * qteExtras;
 
     let totalBrut =gainHeures + gainTauxJournalierMoyen + gainExtras;
+
 
     document.getElementById('resultatBrut').innerText = totalBrut.toFixed(2) + " €";
     // enlever les charges
@@ -54,8 +61,6 @@ document.getElementById('resultatNet').innerText = totalNet.toFixed(2) + " €";
 }
 
 
-
-
 let bouton = document.getElementById('calcFunction');
 bouton.addEventListener('click',calculGain);
 
@@ -64,10 +69,6 @@ bouton.addEventListener('click',calculGain);
 let inputs = document.querySelectorAll('#formCalculGain input.inpt');
 inputs.forEach(monInput => {
     //si il a une valeur, lui donner.
-    let cookie = getCookies(inputs);
-    if (cookie != undefined && cookie != null){
-        inputs.value = cookie;
-    }
     monInput.addEventListener('change', calculGain);
     monInput.addEventListener('keyup', calculGain);
 })
@@ -77,19 +78,25 @@ inputs.forEach(monInput => {
 function saveElementsInCookies(input){
     document.cookie = input.name +'='+ input.value;
 }
-//mettre les valeurs dans les inputs
-debugger;
-function getCookies(inputs){
-    let mesCookies = document.cookie;
-    //tauxHoraire=1; TJM=2; extras=3; qteTH=4; qteTJM=5; qteExtras=6; Charges=7
-    let name = inputs.name + '=';
-    let tableauCookies = mesCookies.split('; ');
-    let valeurCookie = null;
-    tableauCookies.forEach(cookie =>{
-        if (cookie.indexOf(name)=== 0){
-            //on a chopé le bon cookie.
-            valeurCookie =cookie.substring(name.length);
-        }
-    });
-    return valeurCookie;
+
+
+function desactiveTJM(){
+    if (tauxHoraire.value != 0) {
+        document.getElementById('TJM').disabled = true;
+        document.getElementById('qteTJM').disabled = true;
+    }
+    else{
+        document.getElementById('TJM').disabled = false;
+        document.getElementById('qteTJM').disabled = false;
+    }
 }
+/*function desactiveTauxHoraire(){
+    if (TauxJournalierMoyen.value != 0) {
+        document.getElementById('tauxHoraire').disabled = true;
+        document.getElementById('qteTH').disabled = true;
+    }
+    else{
+        document.getElementById('tauxHoraire').disabled = false;
+        document.getElementById('qteTH').disabled = false;
+    }
+}*/
