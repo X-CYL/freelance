@@ -59,14 +59,6 @@ document.getElementById('resultatTaxes').innerText = chargesADeduire.toFixed(2) 
 document.getElementById('resultatNet').innerText = totalNet.toFixed(2) + " €";
 }
 
-<<<<<<< HEAD
-=======
-
-let bouton = document.getElementById('calcFunction');
-bouton.addEventListener('click',calculGain);
-
-
->>>>>>> workingBranch
 //recuperer tous les inputs et leur affecter des evenements
 let inputs = document.querySelectorAll('#formCalculGain input.inpt');
 inputs.forEach(monInput => {
@@ -80,7 +72,6 @@ inputs.forEach(monInput => {
 function saveElementsInCookies(input){
     document.cookie = input.name +'='+ input.value;
 }
-<<<<<<< HEAD
 /* reste a faire
 arrondir le résultat à deux décimales   FAIT 
 raffraichir le resultat au changement d'input
@@ -91,23 +82,3 @@ bouton et fonction imprimer
 convertir en PDF
 stocker en cookie le formulaire (dernier calcul)
 historique de calcul seulement si click sur calculer*/
-=======
-
-
-function disabledInputs() {
-    if (tauxHoraire.value != 0) {
-      TJM.setAttribute('disabled', '');
-      qteTJM.setAttribute('disabled', '');
-    } else {
-      TJM.removeAttribute('disabled', '');
-      qteTJM.removeAttribute('disabled', '');
-    }
-    if (TJM.value != 0) {
-      tauxHoraire.setAttribute('disabled', '');
-      qteTH.setAttribute('disabled', '');
-    } else {
-      tauxHoraire.removeAttribute('disabled', '');
-      qteTH.removeAttribute('disabled', '');
-    }
-  }
->>>>>>> workingBranch
