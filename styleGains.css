@@ -23,6 +23,7 @@
 fieldset{
     color:rgb(59, 108, 110);
     font-weight: bold;
+    display: flex;
 }
 body{
     background-color: #4374FF;
@@ -33,7 +34,6 @@ background-size: cover;
 .inpt{
     background: rgb(239, 239, 225);
     height:30px;
-    align-items:center;
     font-size:1.2em;
     padding-left: 10px;
 }

@@ -1,4 +1,25 @@
+/* reste a faire
+FAIT arrondir le résultat à deux décimales
+FAIT rafraichir le resultat au changement d'input 
+FAIT onchane et on keyup 
+FAIT verifier si < a 0 
+stocker en cookie le formulaire (dernier calcul)
+animation?
+bouton et fonction imprimer
+convertir en PDF
+historique de calcul seulement si click sur calculer*/
+function checkInputs(){
+    let inputs = document.querySelectorAll('#formCalculGain input.inpt');
+    inputs.forEach(monInput =>{
+        if(monInput.value <0){
+            monInput.value = 0;
+        }
+        saveElementsInCookies(monInput);
+    })
+}
+
 function calculGain(){
+    checkInputs();
     //on recupere le html formulaire
     let myForm = document.getElementById('formCalculGain'); //recupere tout le formulaire
     let formObj = new FormData(myForm);//transforme le formulaire en un objet avec tout les datas
@@ -15,6 +36,11 @@ function calculGain(){
     let qteExtras = formObj.get('qteExtras');
     //recupere les charges
     let charges = formObj.get('Charges');
+
+    //bloquer TauxHoraire si TJM utilisé et vice-versa
+    disabledInputs();
+      
+
     // on commence le calcul
     let gainHeures= tauxHoraire * qteTauxHoraire;
     let gainTauxJournalierMoyen = TauxJournalierMoyen * qteTauxJournalierMoyen;
@@ -22,7 +48,8 @@ function calculGain(){
 
     let totalBrut =gainHeures + gainTauxJournalierMoyen + gainExtras;
 
-    document.getElementById('resultatBrut').innerText = totalBrut + " €";
+
+    document.getElementById('resultatBrut').innerText = totalBrut.toFixed(2) + " €";
     // enlever les charges
 //totalBrut - charges%
 // chargeADeduire = totalBrut -(totalBrut * (charges/100))
@@ -32,6 +59,14 @@ document.getElementById('resultatTaxes').innerText = chargesADeduire.toFixed(2) 
 document.getElementById('resultatNet').innerText = totalNet.toFixed(2) + " €";
 }
 
+<<<<<<< HEAD
+=======
+
+let bouton = document.getElementById('calcFunction');
+bouton.addEventListener('click',calculGain);
+
+
+>>>>>>> workingBranch
 //recuperer tous les inputs et leur affecter des evenements
 let inputs = document.querySelectorAll('#formCalculGain input.inpt');
 inputs.forEach(monInput => {
@@ -45,6 +80,7 @@ inputs.forEach(monInput => {
 function saveElementsInCookies(input){
     document.cookie = input.name +'='+ input.value;
 }
+<<<<<<< HEAD
 /* reste a faire
 arrondir le résultat à deux décimales   FAIT 
 raffraichir le resultat au changement d'input
@@ -55,3 +91,23 @@ bouton et fonction imprimer
 convertir en PDF
 stocker en cookie le formulaire (dernier calcul)
 historique de calcul seulement si click sur calculer*/
+=======
+
+
+function disabledInputs() {
+    if (tauxHoraire.value != 0) {
+      TJM.setAttribute('disabled', '');
+      qteTJM.setAttribute('disabled', '');
+    } else {
+      TJM.removeAttribute('disabled', '');
+      qteTJM.removeAttribute('disabled', '');
+    }
+    if (TJM.value != 0) {
+      tauxHoraire.setAttribute('disabled', '');
+      qteTH.setAttribute('disabled', '');
+    } else {
+      tauxHoraire.removeAttribute('disabled', '');
+      qteTH.removeAttribute('disabled', '');
+    }
+  }
+>>>>>>> workingBranch
