@@ -38,9 +38,8 @@ function calculGain(){
     let charges = formObj.get('Charges');
 
     //bloquer TauxHoraire si TJM utilisé et vice-versa
-    //tauxHoraire.addEventListener('keyDown',desactiveTJM());
-    //TauxJournalierMoyen.addEventListener('keyDown',desactiveTauxHoraire());
-
+    disabledInputs();
+      
 
     // on commence le calcul
     let gainHeures= tauxHoraire * qteTauxHoraire;
@@ -80,23 +79,19 @@ function saveElementsInCookies(input){
 }
 
 
-function desactiveTJM(){
+function disabledInputs() {
     if (tauxHoraire.value != 0) {
-        document.getElementById('TJM').disabled = true;
-        document.getElementById('qteTJM').disabled = true;
+      TJM.setAttribute('disabled', '');
+      qteTJM.setAttribute('disabled', '');
+    } else {
+      TJM.removeAttribute('disabled', '');
+      qteTJM.removeAttribute('disabled', '');
     }
-    else{
-        document.getElementById('TJM').disabled = false;
-        document.getElementById('qteTJM').disabled = false;
+    if (TJM.value != 0) {
+      tauxHoraire.setAttribute('disabled', '');
+      qteTH.setAttribute('disabled', '');
+    } else {
+      tauxHoraire.removeAttribute('disabled', '');
+      qteTH.removeAttribute('disabled', '');
     }
-}
-/*function desactiveTauxHoraire(){
-    if (TauxJournalierMoyen.value != 0) {
-        document.getElementById('tauxHoraire').disabled = true;
-        document.getElementById('qteTH').disabled = true;
-    }
-    else{
-        document.getElementById('tauxHoraire').disabled = false;
-        document.getElementById('qteTH').disabled = false;
-    }
-}*/
+  }
