@@ -89,3 +89,16 @@ function disabledInputs() {
     qteTH.removeAttribute('disabled', '');
   }
 }
+
+
+let inputProject = document.getElementById('inputProject');
+let msgName = document.getElementById('alertTextInputName');
+
+inputProject.addEventListener('keydown',() => {
+  if (inputProject != ""){
+    inputProject.style.visibility = 'visible';
+  }
+  else{
+    inputProject.style.visibility = 'hidden';
+  }
+});
