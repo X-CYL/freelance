@@ -72,13 +72,20 @@ inputs.forEach(monInput => {
 function saveElementsInCookies(input){
     document.cookie = input.name +'='+ input.value;
 }
-/* reste a faire
-arrondir le résultat à deux décimales   FAIT 
-raffraichir le resultat au changement d'input
-onchane et on keyup
-verifier si < a 0 
-animation?
-bouton et fonction imprimer
-convertir en PDF
-stocker en cookie le formulaire (dernier calcul)
-historique de calcul seulement si click sur calculer*/
+
+function disabledInputs() {
+  if (tauxHoraire.value != 0) {
+    TJM.setAttribute('disabled', '');
+    qteTJM.setAttribute('disabled', '');
+  } else {
+    TJM.removeAttribute('disabled', '');
+    qteTJM.removeAttribute('disabled', '');
+  }
+  if (TJM.value != 0) {
+    tauxHoraire.setAttribute('disabled', '');
+    qteTH.setAttribute('disabled', '');
+  } else {
+    tauxHoraire.removeAttribute('disabled', '');
+    qteTH.removeAttribute('disabled', '');
+  }
+}
