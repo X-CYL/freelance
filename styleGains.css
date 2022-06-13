@@ -2,11 +2,18 @@
     margin: 15px;
     background-color: rgb(134, 199, 221);
 }
+
 .formContainer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     height:auto;
+}
+.formContainerProject{
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 }
 .buttonCalc{
     background: gray;
@@ -65,4 +72,25 @@ h1{
 }
 .sectionCalcul.validation{
     background-color: rgba(66, 117, 255, 0.0);
+}
+.inptProjectName{
+    background: rgb(239, 239, 225);
+    height:30px;
+    font-size:1.2em;
+    padding-left: 10px;
+    width: 70%;
+    text-align: center;
+    color:rgb(226, 118, 45);
+    font-weight: bold;
+}
+.inptProjectName:hover{
+    background-color: aquamarine;
+}
+#alertTextInputName{
+    visibility: hidden;
+    color: rgb(239, 57, 57);
+    text-align: center;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
