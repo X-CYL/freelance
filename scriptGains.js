@@ -8,6 +8,7 @@ animation?
 bouton et fonction imprimer
 convertir en PDF
 historique de calcul seulement si click sur calculer*/
+
 function checkInputs(){
     let inputs = document.querySelectorAll('#formCalculGain input.inpt');
     inputs.forEach(monInput =>{
@@ -95,3 +96,19 @@ function disabledInputs() {
       qteTH.removeAttribute('disabled', '');
     }
   }
+function inputNameControl(){
+/*let inputProject = document.getElementById('inputProject');
+inputProject.addEventListener('mouseout',() => {*/
+  if (document.getElementById('inputProject').value == ""){
+    document.getElementById('alertTextInputName').style.visibility = 'visible';
+  }
+  else{
+    document.getElementById('alertTextInputName').style.visibility = 'hidden';
+  }
+};
+
+
+
+let inputProject = document.getElementById('inputProject');
+inputProject.addEventListener('mouseout',inputNameControl);
+inputProject.addEventListener('keydown', inputNameControl);
