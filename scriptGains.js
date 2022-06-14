@@ -59,6 +59,21 @@ let totalNet = totalBrut - chargesADeduire;
 document.getElementById('resultatTaxes').innerText = chargesADeduire.toFixed(2) + " €";
 document.getElementById('resultatNet').innerText = totalNet.toFixed(2) + " €";
 }
+//affecter le calcul sur le bouton
+
+let bouton = document.getElementById('calcFunction');
+bouton.addEventListener('click',calculGain);
+
+//vider tous les champs de formulaires
+
+function resetAllInputs(){
+  document.getElementById('formCalculGain').value = "";
+  document.getElementById('inputProject').value = "";
+}
+
+let resetButton = document.getElementById('resetButton');
+resetButton.addEventListener('click', resetAllInputs);
+
 
 //recuperer tous les inputs et leur affecter des evenements
 let inputs = document.querySelectorAll('#formCalculGain input.inpt');
@@ -101,8 +116,8 @@ inputProject.addEventListener('mouseout',() => {*/
   }
 };
 
-
-
 let inputProject = document.getElementById('inputProject');
 inputProject.addEventListener('mouseout',inputNameControl);
 inputProject.addEventListener('keydown', inputNameControl);
+
+
