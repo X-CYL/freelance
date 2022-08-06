@@ -13,11 +13,11 @@
     </header>
     <form class="formCalcul">
         <div class="sectionCalcul projectName">
-            <fieldset class="formContainerProject">
+            <fieldset class="formContainerProject" id = "fieldsetProject">
             <legend>Nom de votre projet</legend>
-            <label>Nom</label>
+            <label>Nom du projet</label>
                 <input class="inptProjectName" type="text" id="inputProject" placeholder="ex: Site Internet de ...">
-                <p id="alertTextInputName">! il faut preciser un nom de projet !</p>
+                <span id = "alertTextInputName"></span>
         </div> 
         </form>
     </fieldset>
@@ -80,7 +80,7 @@
                 <legend>le resultat des calculs</legend>
             <div class="resultDiv resultBrut">
                 <p>Brut</p>
-                <span id="resultatBrut">€</span> </span>
+                <span id="resultatBrut">€</span>
             </div>
                 <div class="resultDiv resultTaxes">
                     <p>Taxes</p>

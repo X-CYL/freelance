@@ -87,7 +87,6 @@ h1{
     background-color: aquamarine;
 }
 #alertTextInputName{
-    visibility: hidden;
     color: rgb(239, 57, 57);
     text-align: center;
     font-weight: bold;

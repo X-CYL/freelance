@@ -8,7 +8,10 @@ animation?
 bouton et fonction imprimer
 convertir en PDF
 historique de calcul seulement si click sur calculer*/
-
+document.body.addEventListener("load", focusOnFirstInput());
+function focusOnFirstInput() {
+  document.getElementById("inputProject").focus();
+}
 function checkInputs(){
     let inputs = document.querySelectorAll('#formCalculGain input.inpt');
     inputs.forEach(monInput =>{
@@ -110,14 +113,14 @@ function inputNameControl(){
 /*let inputProject = document.getElementById('inputProject');
 inputProject.addEventListener('mouseout',() => {*/
   if (document.getElementById('inputProject').value == ""){
-    document.getElementById('alertTextInputName').style.visibility = 'visible';
+    document.getElementById('alertTextInputName').innerText = "ce champ ne peut pas être vide";
   }
   else{
-    document.getElementById('alertTextInputName').style.visibility = 'hidden';
+    document.getElementById('alertTextInputName').innerText = "";
   }
 };
 
-let inputProject = document.getElementById('inputProject');
+let inputProject = document.getElementById('fieldsetProject');
 inputProject.addEventListener('mouseout',inputNameControl);
 inputProject.addEventListener('keydown', inputNameControl);
 
