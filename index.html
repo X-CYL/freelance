@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styleGains.css" rel="stylesheet"/>
+    <script src="scriptGains2.js" defer></script>
     <title>Gains en freelance</title>
 </head>
 <body>
@@ -61,7 +62,7 @@
                 <legend>Indiquez vos charges en %</legend>
                 <div>
                     <label>Charges</label>
-                    <input class="inpt" name="Charges" list="dataListOption" placeholder="ex: 11"/>
+                    <input class="inpt" name="Charges" id="Charges" type="number" list="dataListOption" placeholder="ex: 11"/>
                         <datalist id="dataListOption">
                             <option value = 5.5 >
                             <option value = 11 >
@@ -71,10 +72,13 @@
                  </div>
             </fieldset>
         </div>
-        <div class="sectionCalcul validation">
-            <button class="buttonCalc" type="button" id="calcFunction">calculer</button>
-            <button class="buttonCalc" id="resetButton">vider les Champs</button>
+        <div class="contCalculs">
+            <div class="sectionCalcul validation">
+                <button class="buttonCalc" type="button" id="calcFunction">calculer</button>
+                <button type="button" class="buttonCalc" id="resetButton">vider les Champs de calcul</button>
+            </div>
         </div>
+        
         <div class="sectionCalcul result">
             <fieldset class="formContainer">
                 <legend>le resultat des calculs</legend>
@@ -93,8 +97,6 @@
             </fieldset>
         </div>
         <p></p>
-    </form>
-    
-    <script src="scriptGains.js"></script>
+    </form> 
 </body>
 </html>

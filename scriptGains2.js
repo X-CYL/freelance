@@ -46,7 +46,7 @@ function calculGain(){
     let charges = formObj.get('Charges');
 
     //bloquer TauxHoraire si TJM utilisé et vice-versa
-    disabledInputs();
+    inputNameControl();
       
 
     // on commence le calcul
@@ -81,7 +81,6 @@ function resetAllInputs(){
   document.getElementById('qteTJM').value = "";
   document.getElementById('qteExtras').value = "";
   document.getElementById('Charges').value = "";
-  document.getElementById('inputProject').value = "";
   calculGain();
 }
 
@@ -104,37 +103,50 @@ function saveElementsInCookies(input){
 }
 
 function disabledInputs() {
-  if (tauxHoraire.value != 0) {
-    TJM.setAttribute('disabled', '');
-    qteTJM.setAttribute('disabled', '');
-    TJM.setAttribute("style", "background-color:lightgrey;");
-    qteTJM.setAttribute("style", "background-color:lightgrey;");
-  } else {
-    TJM.removeAttribute('disabled', '');
-    qteTJM.removeAttribute('disabled', '');
-    TJM.removeAttribute("style", "background-color:lightgrey;");
-    qteTJM.removeAttribute("style", "background-color:lightgrey;");
-  }
-  if (TJM.value != 0) {
-    tauxHoraire.setAttribute('disabled', '');
-    qteTH.setAttribute('disabled', '');
-    tauxHoraire.setAttribute("style", "background-color:lightgrey;");
-    qteTH.setAttribute("style", "background-color:lightgrey;");
-  } else {
-    tauxHoraire.removeAttribute('disabled', '');
-    qteTH.removeAttribute('disabled', '');
-    tauxHoraire.removeAttribute("style", "background-color:lightgrey;");
-    qteTH.removeAttribute("style", "background-color:lightgrey;");
-  }
+    if (tauxHoraire.value != 0) {
+        TJM.setAttribute('disabled', '');
+        qteTJM.setAttribute('disabled', '');
+        TJM.setAttribute("style", "background-color:lightgrey;");
+        qteTJM.setAttribute("style", "background-color:lightgrey;");
+      } else {
+        TJM.removeAttribute('disabled', '');
+        qteTJM.removeAttribute('disabled', '');
+        TJM.removeAttribute("style", "background-color:lightgrey;");
+        qteTJM.removeAttribute("style", "background-color:lightgrey;");
+      }
+      if (TJM.value != 0) {
+        tauxHoraire.setAttribute('disabled', '');
+        qteTH.setAttribute('disabled', '');
+        tauxHoraire.setAttribute("style", "background-color:lightgrey;");
+        qteTH.setAttribute("style", "background-color:lightgrey;");
+      } else {
+        tauxHoraire.removeAttribute('disabled', '');
+        qteTH.removeAttribute('disabled', '');
+        tauxHoraire.removeAttribute("style", "background-color:lightgrey;");
+        qteTH.removeAttribute("style", "background-color:lightgrey;");
+      }
   }
 function inputNameControl(){
 /*let inputProject = document.getElementById('inputProject');
 inputProject.addEventListener('mouseout',() => {*/
   if (document.getElementById('inputProject').value == ""){
     document.getElementById('alertTextInputName').innerText = "ce champ ne peut pas être vide";
+    TJM.setAttribute('disabled', '');
+    qteTJM.setAttribute('disabled', '');
+    tauxHoraire.setAttribute('disabled', '');
+    qteTH.setAttribute('disabled', '');
+    extras.setAttribute('disabled','');
+    qteExtras.setAttribute('disabled','')
   }
   else{
     document.getElementById('alertTextInputName').innerText = "";
+    TJM.removeAttribute('disabled', '');
+    qteTJM.removeAttribute('disabled', '');
+    tauxHoraire.removeAttribute('disabled', '');
+    qteTH.removeAttribute('disabled', '');
+    extras.removeAttribute('disabled','');
+    qteExtras.removeAttribute('disabled','')
+    disabledInputs();
   }
 };
 

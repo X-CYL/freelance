@@ -1,0 +1,5 @@
+Il y a deux fichier JS dans cette application
+Une qui est la premiere développée (scriptGains.js) et qui sert maintenant pour faire des tests de fonctions
+et une autre (scriptGainsObjet.js) ou toutes les variables on été remplacées par un objet
+avec des parametres et des methodes et qui est affectée a l'application par défault.
+Comme ca j'ai juste a switcher un des deux fichiers dans le script HTML pour vérifier le fonctionnement de mes tests
